@@ -30,23 +30,23 @@ class Record:
         self.phones.append(Phone(numb))
 
     def remove_phone(self, numb):
-        for i in self.phones:
-            if i.value == numb:
-                self.phones.remove(i)
+        for phone in self.phones:
+            if phone.value == numb:
+                self.phones.remove(phone)
 
     def edit_phone(self, old_numb, new_numb):
-        changed = False
-        for i in self.phones:
-            if i.value == old_numb:
-                i.value = new_numb
-                changed = True
-        if not changed:
-            raise ValueError
+        for phone in self.phones:
+            if phone.value == old_numb:
+                phone.value = new_numb
+                break
+            else:
+                raise ValueError
 
     def find_phone(self, numb):
-        for i in self.phones:
-            if i.value == numb:
-                return i
+        for phone in self.phones:
+            if phone.value == numb:
+                return phone
+        return None
 
     def __str__(self):
         return f"Contact name: {self.name.value}, \
