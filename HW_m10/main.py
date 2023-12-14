@@ -39,8 +39,8 @@ class Record:
             if phone.value == old_numb:
                 phone.value = new_numb
                 break
-            else:
-                raise ValueError
+        else:
+            raise ValueError
 
     def find_phone(self, numb):
         for phone in self.phones:
